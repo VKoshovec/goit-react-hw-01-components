@@ -1,11 +1,17 @@
-import './App.css';
+import { Paper } from './components/Paper/Paper';
 import { Profile } from './components/Profile/Profile';
-import user from '../src/user.json'
+import user from '../src/user.json';
+
+import { Statistics } from './components/Statistics/Statistics';
+import data from '../src/data.json';
 
 
 function App() {
   return (
-    <Profile { ...user } ></Profile>
+    <Paper>
+      <Profile { ...user } ></Profile>
+      <Statistics title="Upload stats" stats={data}/>
+    </Paper>
   );
 }
 
