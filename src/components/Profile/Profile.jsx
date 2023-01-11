@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import css from './Profile.module.css'
+import css from './profile.module.css'
 
-export const Profile = ({ 
+const Profile = ({ 
   username,
   tag,
   location,
@@ -48,3 +48,5 @@ Profile.propTypes = {
       likes: PropTypes.number.isRequired,
   }
 };
+
+export default Profile;
