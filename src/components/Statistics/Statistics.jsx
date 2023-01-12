@@ -33,8 +33,6 @@ function randomColor () {
   }
 }
 
-
-
 const Statistics = ( { title, stats, grouped } ) => {
     return (
       <section className= { css.statistics }>
@@ -69,7 +67,6 @@ Statistics.propTypes = {
             percentage: PropTypes.number.isRequired
         }),
     ),
-    grouped: PropTypes.bool,
 };
 
 export default Statistics;

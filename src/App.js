@@ -14,7 +14,8 @@ function App() {
   return (
     <Paper>
       <Profile { ...user } />
-      <Statistics title="Upload stats" stats={data} grouped/>
+      <Statistics title="Upload stats" stats={data} />
+      <Statistics title="Upload stats (grouped)" stats={data} grouped/>
       <FriendList friends={ friends }/>
       <TransactionHistory items={ transactions }/>
     </Paper>
