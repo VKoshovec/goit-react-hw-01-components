@@ -28,7 +28,6 @@ function groupArr (arr) {
 function randomColor () {
   
   const bgcolor = "#"+(Math.round(999999 - 99999 * Math.random()) );
-  console.log(bgcolor)
   return {
     backgroundColor: bgcolor,
   }
