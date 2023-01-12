@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import css from './statistics.module.css';
 
 function groupArr (arr) { 
   return arr.reduce((acc, element)=> {
@@ -24,23 +25,34 @@ function groupArr (arr) {
   }, []
 )};
 
+function randomColor () {
+  
+  const bgcolor = "#"+(Math.round(999999 - 99999 * Math.random()) );
+  console.log(bgcolor)
+  return {
+    backgroundColor: bgcolor,
+  }
+}
+
+
+
 const Statistics = ( { title, stats, grouped } ) => {
     return (
-      <section class="statistics">
-        {title && <h2 class="title">{title}</h2>} 
-          <ul class="stat-list">
+      <section className= { css.statistics }>
+        {title && <h2 className={ css.title }>{title}</h2>} 
+          <ul className={ css.statList }>
             { grouped ?
               groupArr(stats).map(stat => (
-                <li key={stat.id} class="item">
-                   <span class="label">{stat.label}</span>
-                   <span class="percentage">{stat.percentage}</span>
+                <li key={stat.id} className={ css.item } style={ randomColor() }>
+                   <span className={ css.label }>{stat.label}</span>
+                   <span className={ css.percentage }>{stat.percentage + "%"}</span>
                 </li>
               ))
               :
               stats.map(stat => (
-                <li key={stat.id} class="item">
-                   <span class="label">{stat.label}</span>
-                   <span class="percentage">{stat.percentage}</span>
+                <li key={stat.id} className={ css.item } style={ randomColor() }>
+                   <span className={ css.label }>{stat.label}</span>
+                   <span className={ css.percentage }>{ stat.percentage + "%" }</span>
                 </li>
               ))
             }    
